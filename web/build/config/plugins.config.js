@@ -48,8 +48,6 @@ var basePlugins = [
     React: 'react',
     ReactDOM: 'react-dom',
     moment: 'moment',
-    toastr: 'toastr',
-    G2: 'g2',
     Antd: 'antd',
   }),
 ];

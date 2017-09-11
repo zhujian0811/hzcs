@@ -104,10 +104,19 @@ var Home = React.createClass({
   },
 
   delete: function (order) {
-    OrderService.delete({ id: order.id }, (res) => {
-      message.success('删除成功');
-      this.getOrder();
+    Modal.confirm({
+      title: '警告：删除订单 ',
+      content: '是否需要删除该订单',
+      onOk: () => {
+        OrderService.delete({ id: order.id }, (res) => {
+          message.success('删除成功');
+          this.getOrder();
+        })
+      },
+      okText: '确认',
+      cancelText: '取消',
     })
+    
   },
 
   getToday: function(e){
@@ -198,7 +207,8 @@ var Home = React.createClass({
     return (
       <div className="orderManager" style={{ "height": "100%" }}>
         <Header style={{ background: '#fff', padding: 0 }} >
-        </Header>
+        <h3>完成订单</h3>
+      </Header>
 
         {this.state.mainVisible ?
           <EditMain

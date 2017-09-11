@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-12 13:57:58 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-11 02:04:18
+ * @Last Modified time: 2017-09-12 00:56:06
  */
 import { Menu, Icon, Switch, Layout, Form, Select, DatePicker, Modal, Input } from 'antd';
 const { Header, Sider, Content, Footer } = Layout;
@@ -121,9 +121,6 @@ var addUser = React.createClass({
                     name='orderTime'
                     value={moment(parseInt(this.state.Item.orderTime) || moment(new Date()))}
                     format='YYYY/MM/DD'
-                    getCalendarContainer={function () {
-                      return document.getElementsByClassName('global-modals')[0];
-                    }}
                     onChange={(date) => {
                       this.state.Item.orderTime = date ? date.valueOf() : this.props.item.startDate;
                       this.setState({});
@@ -143,9 +140,6 @@ var addUser = React.createClass({
                     name='deliverTime'
                     value={moment(parseInt(this.state.Item.deliverTime) || moment(new Date()))}
                     format='YYYY/MM/DD'
-                    getCalendarContainer={function () {
-                      return document.getElementsByClassName('global-modals')[0];
-                    }}
                     onChange={(date) => {
                       this.state.Item.deliverTime = date ? date.valueOf() : this.props.item.startDate;
                       this.setState({});
@@ -165,9 +159,6 @@ var addUser = React.createClass({
                     style={{ 'width': '300px' }}
                     value={moment(parseInt(this.state.Item.payTime) || moment(new Date()))}
                     format='YYYY/MM/DD'
-                    getCalendarContainer={function () {
-                      return document.getElementsByClassName('global-modals')[0];
-                    }}
                     onChange={(date) => {
                       this.state.Item.payTime = date ? date.valueOf() : this.props.item.startDate;
                       this.setState({});

@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-12 13:57:58 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-11 01:57:58
+ * @Last Modified time: 2017-09-12 00:56:24
  */
 import { Form, Input, Modal, Select, DatePicker } from 'antd';
 const orderService = require('../../service/orderService');
@@ -161,9 +161,6 @@ var addUser = React.createClass({
               placeholder="开工日期"
               value={moment(parseInt(this.state.data.startDate) || moment(new Date()))}
               format='YYYY/MM/DD'
-              getCalendarContainer={function () {
-                return document.getElementsByClassName('global-modal-a')[0];
-              }}
               onChange={this.changeDate}
             />
           </FormItem>

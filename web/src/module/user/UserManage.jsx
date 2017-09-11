@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:14 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-11 01:38:38
+ * @Last Modified time: 2017-09-11 13:35:19
  */
 import { Menu, Icon, Switch, Layout, Button, Modal, Table } from 'antd';
 import AddUser from './AddUser'
@@ -10,7 +10,7 @@ const UserService = require('../../service/UserService');
 const { Header, Sider, Content, Footer } = Layout;
 const SubMenu = Menu.SubMenu;
 
-var Home = React.createClass({
+var UserManage = React.createClass({
   getInitialState: function () {
     return {
       visible: false,
@@ -27,17 +27,18 @@ var Home = React.createClass({
     });
   },
 
-  close: function () {
+  close() {
     this.setState({
       visible: false,
     });
   },
 
-  addUserSuccess: function () {
-    this.close()
+  addUserSuccess() {
+    this.close();
+    this.getUser();
   },
 
-  handleEdit: function (data) {
+  handleEdit(data) {
     this.setState({
       visible: true,
       type: 'edit',
@@ -45,21 +46,21 @@ var Home = React.createClass({
     });
   },
 
-  handleCancel: function () {
+  handleCancel() {
     this.getUser();
     this.setState({
       visible: false,
     });
   },
 
-  getUser: function () {
+  getUser() {
     UserService.getUser({}, (res) => {
       this.setState({ data: res.data })
     })
   },
 
-  delete: function (user) { 
-    UserService.delete({uId:user.uId}, (res) => {
+  delete(user) {
+    UserService.delete({ uId: user.uId }, (res) => {
       message.success('删除成功');
       this.getUser();
     })
@@ -111,7 +112,7 @@ var Home = React.createClass({
         <Header style={{ background: '#fff', padding: 0 }} >
           <Button type="primary"
             className='fr'
-            style={{lineHeight:"28px"}}
+            style={{ lineHeight: "28px" }}
             onClick={this.addUser}
           >添加</Button>
 
@@ -134,4 +135,4 @@ var Home = React.createClass({
   }
 });
 
-module.exports = Home;
+module.exports = UserManage;

@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-12 13:58:13 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-08-12 18:02:47
+ * @Last Modified time: 2017-09-11 14:44:03
  */
 import express from 'express';
 import db from './mongodb/db.js';
@@ -76,5 +76,5 @@ app.use(expressWinston.errorLogger({
 }));
 
 app.use(history());
-app.use(express.static('./public'));
+app.use(express.static('../web/dist'));
 app.listen(config.port);

@@ -12,7 +12,21 @@ var rootDir = path.resolve(__dirname, '../../');
 var pagesDir = path.resolve(rootDir, './src/pages/');
 var buildDir = path.resolve(rootDir, './dist/');
 var plugins = [];
+
+var server = null;
+//npm run build:dev 3.6.1
+// if (process.argv.length > 2) {
+//   version = process.argv[1];
+// }
+
+if (process.env.NODE_ENV === 'production') {
+  server = 'http://116.196.124.92:8080/';
+}
+
 var basePlugins = [
+  new webpack.DefinePlugin({
+    'SERVER': JSON.stringify(server)
+  }),
   new ExtractTextPlugin({
     filename: '[name].[contentHash].css',
     disable: false,
@@ -22,7 +36,7 @@ var basePlugins = [
     names: ['common'],
     chunks: ['index']
   }),
-  
+
   new webpack.LoaderOptionsPlugin({
     options: {
       postcss: function () {

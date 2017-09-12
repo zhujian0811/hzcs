@@ -8,7 +8,7 @@ var configEntry = {}
 var buildPattern = pagesDir + '/*.js';
 var fileArr = glob.sync(buildPattern)
 
-configEntry['vendor'] = ['react', 'react-router', 'react-dom', 'moment', 'antd'];
+configEntry['vendor'] = ['react', 'react-router', 'react-dom', 'moment'];
 
 fileArr.forEach((file) => {
   var fileName = path.basename(file, path.extname(file));

@@ -1,8 +1,7 @@
 var Routers = require('../../routes/Route.js');
-var Dropdown = Antd.Dropdown;
 window.moment = moment;
 moment.locale('zh-cn');
-import { Menu, Icon, Switch, Layout } from 'antd';
+import { Menu, Icon, Switch, Layout,Dropdown } from 'antd';
 const { Header, Sider, Content, Footer } = Layout;
 const SubMenu = Menu.SubMenu;
 var Admin = React.createClass({

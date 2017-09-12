@@ -62,7 +62,6 @@ var basePlugins = [
     React: 'react',
     ReactDOM: 'react-dom',
     moment: 'moment',
-    Antd: 'antd',
   }),
 ];
 

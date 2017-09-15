@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:14 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-12 01:11:21
+ * @Last Modified time: 2017-09-15 10:00:08
  */
 import { Menu, Icon, Switch, Layout, Checkbox, Button, Modal, Table, Steps } from 'antd';
 const Step = Steps.Step;
@@ -179,11 +179,15 @@ var Home = React.createClass({
           const mianItem = _.find(record.Material, function (item) {
             return item.orderTime > moment().startOf('day').valueOf() && item.orderTime < moment().endOf('day').valueOf();
           })
-          return (<span >{mianItem && mianItem.name ||
-            <Button type="primary"
-              onClick={this.editMain.bind(this, record)}
-              className='ml10'
-              size='small'>编辑</Button>} </span >)
+          return (<span onClick={this.editMain.bind(this, record)} >
+            {mianItem ?
+              <Button type="danger"
+                className='ml10'
+                size='small'> {mianItem.name}</Button>
+              :
+              <Button type="primary"
+                className='ml10'
+                size='small'>编辑</Button>} </span >)
         }
       },
       {
@@ -191,7 +195,7 @@ var Home = React.createClass({
         render: (text, record, index) => {
           return (
             <span>
-              <Button type="primary"
+              <Button
                 onClick={this.handleEdit.bind(this, record)}
                 icon="edit"
                 size='small'></Button>

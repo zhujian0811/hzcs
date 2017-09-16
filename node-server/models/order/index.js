@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-12 13:58:04 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-11 02:07:29
+ * @Last Modified time: 2017-09-16 14:17:16
  */
 'use strict';
 
@@ -15,7 +15,7 @@ var ToySchema = new Schema({
   orderTime: Number,
   deliverTime: Number,
   price: String,
-  customer:String,
+  customer: String,
   payTime: String,
   supplier: String,
 });
@@ -31,6 +31,7 @@ const orderSchema = new Schema({
   modifyTime: Number,
   price: Number,
   Material: Array,
+  orderTimeStr: String
 })
 
 orderSchema.index({ id: 1 });

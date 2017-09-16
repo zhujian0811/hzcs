@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:24 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-11 00:29:20
+ * @Last Modified time: 2017-09-16 14:16:49
  */
 
 import Order from '../../models/order/index'
@@ -41,6 +41,9 @@ class EditOrder {
       const orderInfo = _.omit(_.clone(req.body), 'id');
       orderInfo.modifyTime = moment().valueOf();
       if (orderInfo.Material) { 
+        _.map(orderInfo.Materia, function (item) { 
+        item.orderTimeStr=new Date(item.orderTime)
+        })
         orderInfo.Material = JSON.parse(orderInfo.Material)
       }    
        console.log(orderInfo)

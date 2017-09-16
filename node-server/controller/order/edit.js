@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:24 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-16 14:16:49
+ * @Last Modified time: 2017-09-16 14:37:34
  */
 
 import Order from '../../models/order/index'
@@ -41,13 +41,14 @@ class EditOrder {
       const orderInfo = _.omit(_.clone(req.body), 'id');
       orderInfo.modifyTime = moment().valueOf();
       if (orderInfo.Material) { 
-        _.map(orderInfo.Materia, function (item) { 
-        item.orderTimeStr=new Date(item.orderTime)
-        })
-        orderInfo.Material = JSON.parse(orderInfo.Material)
+       orderInfo.Material = JSON.parse(orderInfo.Material);
+       _.map(orderInfo.Material, function (item) { 
+          item.orderTimeStr = new Date(item.orderTime);      
+       })
+       console.log(orderInfo.Material)
       }    
-       console.log(orderInfo)
-      const orderList = await Order.update({ id: req.body.id }, orderInfo)
+      console.log(orderInfo);
+      const orderList = await Order.update({ id: req.body.id }, orderInfo);
       res.send({
         status: 1,
         message: "修改成功"

@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:14 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-10-05 13:52:14
+ * @Last Modified time: 2017-10-05 15:51:40
  */
 import { Menu, Icon, Switch, Layout, Checkbox, Button, Modal, Table, Steps } from 'antd';
 const Step = Steps.Step;
@@ -140,7 +140,7 @@ var Home = React.createClass({
       },
       { title: '客户姓名', dataIndex: 'name', key: 'name' },
       { title: '客户电话', dataIndex: 'phone', key: 'phone' },
-      { title: '客户地址', dataIndex: 'address', key: 'address' },
+      { title: '客户地址', dataIndex: 'address', key: 'address' },  
       {
         title: '设计师', dataIndex: '', key: 'designer',
         render: (text, record, index) => {
@@ -237,6 +237,7 @@ var Home = React.createClass({
         <Table
           columns={columns}
           dataSource={this.state.order}
+          pagination={{ pageSize: 15 }}
           expandedRowRender={record => {
             return <div >
               <h5 style={{ lineHeight: '30px' }}>工程进度：</h5>

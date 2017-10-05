@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:14 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-11 13:35:19
+ * @Last Modified time: 2017-10-05 15:54:42
  */
 import { Menu, Icon, Switch, Layout, Button, Modal, Table } from 'antd';
 import AddUser from './AddUser'
@@ -127,6 +127,7 @@ var UserManage = React.createClass({
         <Table
           columns={columns}
           dataSource={this.state.data}
+          pagination={{ pageSize: 15 }}
           size="small"
         />
 

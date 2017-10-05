@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:14 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-11 01:50:52
+ * @Last Modified time: 2017-10-05 15:54:30
  */
 import { Menu, Icon, Switch, Layout, Checkbox, Button, Modal, Table, Steps } from 'antd';
 const Step = Steps.Step;
@@ -218,6 +218,7 @@ var Home = React.createClass({
           /> : null}
         <Table
           columns={columns}
+          pagination={{ pageSize: 15 }}
           dataSource={this.state.order}
           size="small"
         />

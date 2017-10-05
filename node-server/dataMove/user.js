@@ -2,17 +2,17 @@
  * @Author: Michael 
  * @Date: 2017-08-09 14:52:14 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-26 15:36:48
+ * @Last Modified time: 2017-10-05 15:43:02
  */
 
-import Order from '../models/order/index'
+import Order from '../models/user/User.js'
 import db from '../mongodb/db.js';
 var http = require('http');
 var url = require('url');
 
 var querystring = require('querystring');
 
-var regUrl = "http://116.196.124.92:8080/order/get";
+var regUrl = "http://127.0.0.1:8080/user/getUser";
 var post_data = querystring.stringify({
   'type': 1,
 });

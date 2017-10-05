@@ -2,7 +2,7 @@
 
 module.exports = {
 	port: 8080,
-	url: 'mongodb://localhost:27017/hczs',
+	url: 'mongodb://127.0.0.1:27010/hczs',
 	session: {
 		name: 'SID',
 		secret: 'SID',

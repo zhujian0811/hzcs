@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-12 13:57:58 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-12 00:56:06
+ * @Last Modified time: 2017-10-05 13:53:00
  */
 import { Menu, Icon, Switch, Layout, Form, Select, DatePicker, Modal, Input } from 'antd';
 const { Header, Sider, Content, Footer } = Layout;
@@ -93,7 +93,7 @@ var addUser = React.createClass({
           </Menu>
           <Layout style={{ backgroundColor: "#fff" }}>
             <Form layout='horizontal'>
-              <FormItem
+              {/* <FormItem
                 label="客户姓名"
                 key={11111}
                 {...formItemLayout}
@@ -107,8 +107,8 @@ var addUser = React.createClass({
                     value={this.state.Item.customer}
                   />
                 }
-              </FormItem>
-              <FormItem
+              </FormItem> */}
+              {/* <FormItem
                 label="下单时间"
                 key={1111321}
                 {...formItemLayout}
@@ -126,8 +126,8 @@ var addUser = React.createClass({
                       this.setState({});
                     }}
                   />}
-              </FormItem>
-              <FormItem
+              </FormItem> */}
+              {/* <FormItem
                 label="送货时间"
                 key={11331131}
                 {...formItemLayout}
@@ -145,8 +145,8 @@ var addUser = React.createClass({
                       this.setState({});
                     }}
                   />}
-              </FormItem>
-              <FormItem
+              </FormItem> */}
+              {/* <FormItem
                 label="付款时间"
                 key={12211131}
                 {...formItemLayout}
@@ -164,8 +164,8 @@ var addUser = React.createClass({
                       this.setState({});
                     }}
                   />}
-              </FormItem>
-              <FormItem
+              </FormItem> */}
+              {/* <FormItem
                 label="付款金额"
                 key={11445111}
                 {...formItemLayout}
@@ -179,7 +179,7 @@ var addUser = React.createClass({
                     onChange={this.handleChange}
                     value={moneyFormat(this.state.Item.price)}
                   />}
-              </FormItem>
+              </FormItem> */}
               <FormItem
                 label="备注"
                 key={11411}

@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-13 01:11:14 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-15 10:00:08
+ * @Last Modified time: 2017-10-05 13:52:14
  */
 import { Menu, Icon, Switch, Layout, Checkbox, Button, Modal, Table, Steps } from 'antd';
 const Step = Steps.Step;
@@ -141,12 +141,6 @@ var Home = React.createClass({
       { title: '客户姓名', dataIndex: 'name', key: 'name' },
       { title: '客户电话', dataIndex: 'phone', key: 'phone' },
       { title: '客户地址', dataIndex: 'address', key: 'address' },
-      {
-        title: '开工日期', dataIndex: 'startDate', key: 'startDate',
-        render: (text, record, index) => {
-          return (<span > {record.startDate && moment(parseInt(record.startDate)).format('YYYY-MM-DD')}</span >)
-        }
-      },
       {
         title: '设计师', dataIndex: '', key: 'designer',
         render: (text, record, index) => {

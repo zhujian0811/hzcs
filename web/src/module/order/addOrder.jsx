@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-12 13:57:58 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-12 00:56:24
+ * @Last Modified time: 2017-10-06 14:37:56
  */
 import { Form, Input, Modal, Select, DatePicker } from 'antd';
 const orderService = require('../../service/orderService');
@@ -66,9 +66,9 @@ var addUser = React.createClass({
     const service = this.props.type == 'edit' ? 'editOrder' : 'add';
     const log = this.props.type == 'edit' ? "修改成功" : "添加成功";
     if (this.props.type == 'add') {
-      _.map(this.state.Material, (item) => {
-        item.orderTime = moment(this.state.data.startDate).add(item.delayDay, 'day').valueOf()
-      })
+      // _.map(this.state.Material, (item) => {
+      //   item.orderTime = moment(this.state.data.startDate).add(item.delayDay, 'day').valueOf()
+      // })
       this.state.data.Material = JSON.stringify(this.state.Material);
     } else { 
       this.state.data.Material = JSON.stringify(this.state.data.Material);

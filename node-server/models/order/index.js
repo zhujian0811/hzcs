@@ -2,7 +2,7 @@
  * @Author: zhujian 
  * @Date: 2017-08-12 13:58:04 
  * @Last Modified by: zhujian
- * @Last Modified time: 2017-09-16 15:28:46
+ * @Last Modified time: 2017-10-06 14:32:12
  */
 'use strict';
 
@@ -11,13 +11,14 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 var ToySchema = {
   name: String,
-  delayDay: String,
-  orderTime: String,
-  deliverTime: Number,
-  price: String,
-  customer: String,
-  payTime: String,
-  supplier: String,
+  // delayDay: String,
+  // orderTime: String,
+  // deliverTime: Number,
+  // price: String,
+  // customer: String,
+  // payTime: String,
+  // supplier: String,
+  remark:String,
 };
 const orderSchema = new Schema({
   name: String,
